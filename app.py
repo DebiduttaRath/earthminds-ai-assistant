@@ -69,3 +69,11 @@ if user_query and st.session_state.vectorstore:
         st.markdown(format_chat_history(st.session_state.memory.chat_memory.messages))
 elif user_query:
     st.warning("Please upload a document or scrape a URL before asking a question.")
+
+# Hide footer
+hide_streamlit_style = """
+    <style>
+        footer {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)

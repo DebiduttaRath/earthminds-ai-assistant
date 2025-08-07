@@ -1,0 +1,20 @@
+# requirements.txt
+
+streamlit
+langchain
+openai
+langchain-community
+langchain-core
+langchainhub
+langchain-groq
+faiss-cpu
+huggingface-hub
+sentence-transformers
+pypdf
+python-docx
+docx2txt
+beautifulsoup4
+requests
+tiktoken
+python-dotenv
+PyMuPDF

@@ -72,8 +72,15 @@ elif user_query:
 
 # Hide footer
 hide_streamlit_style = """
-    <style>
-        footer {visibility: hidden;}
-    </style>
-"""
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+.css-1q1n0ol {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)

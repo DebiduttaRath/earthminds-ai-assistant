@@ -11,7 +11,7 @@ from memory_manager import (
 from utils import save_uploaded_file, format_chat_history, embed_pdf_display
 from langchain_community.chains import ConversationalRetrievalChain
 from langchain_community.prompts import PromptTemplate
-from langchain_community.schema import Document
+from langchain_core.documents import Document
 import os
 import time
 from datetime import datetime

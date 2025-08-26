@@ -13,7 +13,7 @@ from langchain_text_splitters import (
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain_community.schema import Document
+from langchain_core.documents import Document
 from transformers import AutoModel, AutoTokenizer
 import os
 import warnings

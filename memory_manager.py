@@ -6,7 +6,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.embeddings import OpenAIEmbeddings
 from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory
-from langchain_community.memory.chat_message_histories import ChatMessageHistory
+from langchain.memory import ChatMessageHistory
 from langchain_community.schema import BaseMessage, HumanMessage, AIMessage
 import os
 import pickle

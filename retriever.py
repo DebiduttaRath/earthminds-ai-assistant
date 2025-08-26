@@ -6,7 +6,7 @@ from langchain_community.document_loaders import (
     JSONLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader,
     UnstructuredPowerPointLoader, UnstructuredExcelLoader
 )
-from langchain_community.text_splitter import (
+from langchain_text_splitters import (
     RecursiveCharacterTextSplitter, TokenTextSplitter,
     MarkdownHeaderTextSplitter, HTMLHeaderTextSplitter
 )

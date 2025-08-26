@@ -1,6 +1,7 @@
 # requirements.txt
 
 streamlit
+langchain
 openai
 langchain-community
 langchain-core

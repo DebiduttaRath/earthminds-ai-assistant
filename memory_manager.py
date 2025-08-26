@@ -2,12 +2,12 @@
 # memory_manager.py
 
 import torch
-from langchain.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.embeddings import OpenAIEmbeddings
-from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory
-from langchain.memory.chat_message_histories import ChatMessageHistory
-from langchain.schema import BaseMessage, HumanMessage, AIMessage
+from langchain_community.memory import ConversationBufferMemory, ConversationSummaryBufferMemory
+from langchain_community.memory.chat_message_histories import ChatMessageHistory
+from langchain_community.schema import BaseMessage, HumanMessage, AIMessage
 import os
 import pickle
 import json
@@ -150,7 +150,7 @@ def load_faiss_vector_store(persist_path: str = "./faiss_store"):
             )
         else:
             embeddings = HuggingFaceEmbeddings(
-                model_name="sentence-transformers/all-mpnet-base-v2",
+                model_name="sentence-transformers/all-MiniLM-L6-v2",
                 model_kwargs={"device": device}
             )
     except:

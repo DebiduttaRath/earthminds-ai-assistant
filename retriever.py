@@ -1,19 +1,20 @@
 
 # retriever.py
 
-from langchain.document_loaders import (
+from langchain_community.document_loaders import (
     PyPDFLoader, TextLoader, Docx2txtLoader, CSVLoader, 
     JSONLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader,
     UnstructuredPowerPointLoader, UnstructuredExcelLoader
 )
-from langchain.text_splitter import (
+from langchain_community.text_splitter import (
     RecursiveCharacterTextSplitter, TokenTextSplitter,
     MarkdownHeaderTextSplitter, HTMLHeaderTextSplitter
 )
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.schema import Document
+from langchain_community.vectorstores import FAISS
+from langchain_community.schema import Document
+from transformers import AutoModel, AutoTokenizer
 import os
 import warnings
 import pandas as pd
@@ -24,6 +25,7 @@ from typing import List, Optional, Dict, Any
 import requests
 from bs4 import BeautifulSoup
 import re
+import torch
 import mimetypes
 
 class IntelligentDocumentLoader:
@@ -215,8 +217,11 @@ def get_optimal_embeddings(model_preference: str = "auto") -> Any:
         )
     else:
         # Use best open-source model
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        pre_trained_model=AutoModel.from_pretrained(model_name, torch_dtype=torch.float16)
         return HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-mpnet-base-v2",
+            model_name=model_name,
+            model=pre_trained_model,
             model_kwargs={"device": "cuda" if os.environ.get("CUDA_AVAILABLE") else "cpu"}
         )
 

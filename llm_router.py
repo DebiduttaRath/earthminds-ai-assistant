@@ -4,8 +4,6 @@
 from langchain.chat_models import ChatOpenAI
 from langchain_groq import ChatGroq
 from langchain_anthropic import ChatAnthropic
-from langchain_community.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
 import streamlit as st
 from typing import List, Optional, Dict, Any, Iterator
 from langchain.schema import (

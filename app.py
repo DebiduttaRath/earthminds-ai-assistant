@@ -10,7 +10,7 @@ from memory_manager import (
 )
 from utils import save_uploaded_file, format_chat_history, embed_pdf_display
 from langchain.chains import ConversationalRetrievalChain
-from langchain_community.prompts import PromptTemplate
+from langchain.prompts import PromptTemplate
 from langchain_core.documents import Document
 import os
 import time

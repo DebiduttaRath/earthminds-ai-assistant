@@ -217,7 +217,7 @@ def get_optimal_embeddings(model_preference: str = "auto") -> Any:
         )
     else:
         # Use best open-source model
-        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
         pre_trained_model=AutoModel.from_pretrained(model_name, torch_dtype=torch.float16)
         return HuggingFaceEmbeddings(
             model_name=model_name,

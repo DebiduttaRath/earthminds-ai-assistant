@@ -217,12 +217,12 @@ def get_optimal_embeddings(model_preference: str = "auto") -> Any:
         )
     else:
         # Use best open-source model
+        device = "cuda" if torch.cuda.is_available() else "cpu"
         model_name="sentence-transformers/all-MiniLM-L6-v2"
         pre_trained_model=AutoModel.from_pretrained(model_name, torch_dtype=torch.float16)
         return HuggingFaceEmbeddings(
             model_name=model_name,
-            model=pre_trained_model,
-            model_kwargs={"device": "cuda" if os.environ.get("CUDA_AVAILABLE") else "cpu"}
+            model_kwargs={"device": device}
         )
 
 def build_vector_store(chunks: List[Document], persist_path: str = "./faiss_store") -> FAISS:

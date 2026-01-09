@@ -18,3 +18,4 @@ requests
 tiktoken
 python-dotenv
 PyMuPDF
+langchain-anthropic

@@ -4,6 +4,7 @@ streamlit
 langchain
 openai
 langchain-community
+langchain-openai
 langchain-core
 langchainhub
 langchain-groq

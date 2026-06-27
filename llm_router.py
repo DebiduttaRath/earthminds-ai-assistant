@@ -1,7 +1,7 @@
 
 # llm_router.py
 
-from langchain_community.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
 from langchain_anthropic import ChatAnthropic
 import streamlit as st
